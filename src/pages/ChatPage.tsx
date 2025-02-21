@@ -8,12 +8,7 @@ import { ThoughtMessage } from "~/components/ThoughtMessage";
 import { db } from "~/lib/dexie";
 import { useParams } from "react-router";
 import { useLiveQuery } from "dexie-react-hooks";
-import { set } from "react-hook-form";
 
-type Message = {
-  role: "user" | "assistant";
-  content: string;
-};
 
 const Chatpage = () => {
   const [messageInput, setMessageInput] = useState("");
@@ -98,7 +93,7 @@ const Chatpage = () => {
   return (
     <div className="flex flex-col flex-1">
       <header className="flex items-center px-4 h-16 border-b">
-        <h1 className="text-xl font-bold ml-4">Ayam AI</h1>
+        <h1 className="text-xl font-bold ml-4">Chat</h1>
       </header>
       <main className="flex-1 overflow-auto p-4 w-full">
         <div className="mx-auto space-y-4 pb-20 max-w-screen-md">
@@ -112,7 +107,6 @@ const Chatpage = () => {
           ))}
 
           {!!streamedThought && <ThoughtMessage thought={streamedThought} />}
-
           {!!stramedMessage && (
             <ChatMessage role="assistant" content={stramedMessage} />
           )}
