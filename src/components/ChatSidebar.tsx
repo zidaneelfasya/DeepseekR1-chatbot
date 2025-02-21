@@ -60,6 +60,7 @@ export const ChatSidebar = () => {
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent>
           <DialogHeader>
+            
             <DialogTitle>Create New Threads</DialogTitle>
           </DialogHeader>
           <div className="space-y-1">
@@ -83,10 +84,11 @@ export const ChatSidebar = () => {
       </Dialog>
       <SidebarPrimitive>
         <SidebarHeader>
+          <a href="/" className="flex justify-center py-3 mb-4 text-xl font-bold hover: ">Chicken AI</a>
           <Button
             onClick={() => setIsDialogOpen(true)}
-            className="w-full justify-start"
-            variant="ghost"
+            className="w-full py-5 justify-start bg-primary text-primary-foreground text-md"
+            
           >
             <Plus className="mr-2 h-4 w-4" />
             New Chat
